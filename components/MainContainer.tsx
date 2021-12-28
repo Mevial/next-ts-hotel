@@ -1,5 +1,4 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "./style.module.scss"
 import React, {ReactNode} from "react";
 import {Index} from "./a";
 
@@ -12,30 +11,31 @@ type MainContainerType = {
 const MainContainer: React.FC<MainContainerType> = ({children}) => {
     return (
         <>
-            <Head>
-
-                <title>Главная страница</title>
-            </Head>
-            <div className="navbar">
-                <Index href={'/'} text="Главная"/>
-                <Index href={'/users'} text="Пользователи"/>
+            <div className={styles.header}>
+                <div className={styles.frameBlock}>
+                    <div className={styles.logo}><img alt={'logo'}/></div>
+                    <div className={styles.option}>
+                        <select>
+                            <option>EN</option>
+                            <option>RU</option>
+                        </select></div>
+                </div>
+                <div className={styles.navbar}>
+                    <Index href={'/'} text="Home"/>
+                    <Index href={'/users'} text="Users"/>
+                    <Index href={'/room'} text="Room"/>
+                    <Index href={'/service'} text="Service"/>
+                    <Index href={'/booking'} text="Booking"/>
+                    <Index href={'/gallery'} text="Gallery"/>
+                </div>
             </div>
             <div>
                 {children}
             </div>
 
             <footer className={styles.footer}>
-                Powered by qwerty
+                ©2021 All rights reserved.
             </footer>
-            <style jsx>
-                {`
-                  .navbar {
-                    background: cornflowerblue;
-                    padding: 15px;
-                  }
-
-                `}
-            </style>
         </>
     );
 };

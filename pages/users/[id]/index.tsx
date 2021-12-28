@@ -3,6 +3,7 @@ import styles from '../style.module.scss'
 import MainContainer from "../../../components/MainContainer";
 import React from "react";
 import {GetServerSideProps} from "next";
+import Head from "next/head";
 
 type UserType = {
     user: GetServerSideProps
@@ -13,9 +14,12 @@ export default function User({user}: UserType) {
     const {query} = useRouter()
     return (
         <MainContainer>
+            <Head>
+                <title>User</title>
+            </Head>
             <div className={styles.user}>
-                <h1>Пользователь c id {query.id}</h1>
-                <div>Имя пользователя - {user.name}</div>
+                <h1>User id {query.id}</h1>
+                <div>User name - {user.name}</div>
             </div>
         </MainContainer>
     )

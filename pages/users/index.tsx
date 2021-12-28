@@ -3,6 +3,7 @@ import Link from "next/link";
 import {GetStaticProps} from "next";
 import MainContainer from "../../components/MainContainer";
 import React from "react";
+import Head from "next/head";
 
 type UsersType = {
     users: []
@@ -12,7 +13,10 @@ const Index: React.FC<UsersType> = ({users}) => {
 
     return (
         <MainContainer>
-            <h1>Cписок пользователей</h1>
+            <Head>
+                <title>Users</title>
+            </Head>
+            <h1>User list</h1>
             <ul>
                 {users.map((user: { id: React.Key | null | undefined; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }) =>
                     <li key={user.id}>

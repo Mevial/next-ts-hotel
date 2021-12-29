@@ -1,19 +1,24 @@
 import styles from "./style.module.scss"
 import React, {ReactNode} from "react";
 import {Index} from "./a";
-
+import Image from 'next/image'
+import frame from '../public/images/frame.svg'
+import cart from '../public/images/buy.svg'
 //type DefaultMetaPropsType = DetailedHTMLProps<MetaHTMLAttributes<HTMLMetaElement>, HTMLMetaElement>
 
 type MainContainerType = {
     children: ReactNode
 
 }
+
+
 const MainContainer: React.FC<MainContainerType> = ({children}) => {
+
     return (
         <>
             <div className={styles.header}>
                 <div className={styles.frameBlock}>
-                    <div className={styles.logo}><img alt={'logo'}/></div>
+                    <div className={styles.logo}><Image src={frame} alt="Logo picture"/></div>
                     <div className={styles.option}>
                         <select>
                             <option>EN</option>
@@ -27,6 +32,13 @@ const MainContainer: React.FC<MainContainerType> = ({children}) => {
                     <Index href={'/service'} text="Service"/>
                     <Index href={'/booking'} text="Booking"/>
                     <Index href={'/gallery'} text="Gallery"/>
+
+                </div>
+                <div className={styles.buttonBlock}>
+                    <div className={styles.cart}>
+                        <Image src={cart} alt="Cart picture"/>
+                    </div>
+                    <div className={styles.login}><Index href={'/login'} text="Login"/></div>
                 </div>
             </div>
             <div>

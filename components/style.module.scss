@@ -1,9 +1,63 @@
+@import "./styles/variables";
+
 .header {
   display: flex;
   justify-content: space-between;
-.logo{
+  margin-left: 75px;
+  margin-right: 75px;
+  margin-top: 22px;
+  background: $bgColor;
 
-}
+  .frameBlock {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      position: relative;
+      margin-right: 52px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: $primaryColor;
+        width: 55px;
+        height: 1px;
+        bottom: -10px;
+        left: 90%;
+        transform: rotate(90deg) translate(-50%, 50%);
+      }
+    }
+
+    .option {
+
+    }
+
+  }
+
+  .navbar {
+    padding: 15px;
+  }
+
+  .buttonBlock {
+    display: flex;
+    align-items: center;
+
+    .cart {
+      background: rgba(239, 239, 239, 0.15);
+      border: 1px solid #E8E8E8;
+      border-radius: 8px;
+      padding: 6px 8px;
+    }
+
+    .login {
+      display: flex;
+      margin-left: 24px;
+      background: #F4F4F4;
+      border-radius: 8px;
+      padding: 12px 8px;
+    }
+  }
+
 }
 
 .footer {
@@ -15,7 +69,3 @@
   align-items: center;
 }
 
-.navbar {
-  background: cornflowerblue;
-  padding: 15px;
-}

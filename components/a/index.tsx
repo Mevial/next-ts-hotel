@@ -1,6 +1,7 @@
 import Link from "next/link";
-import styles from './style.module.css'
+import styles from './style.module.scss'
 import React from "react";
+
 
 
 type LinkType = {

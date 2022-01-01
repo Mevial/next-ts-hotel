@@ -1,4 +1,4 @@
-import Document, {Html, Head, Main, NextScript} from 'next/document'
+import Document, {Head, Html, Main, NextScript} from 'next/document'
 
 class MyDocument extends Document {
     render() {
@@ -10,6 +10,7 @@ class MyDocument extends Document {
                     <link
                         href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&display=swap"
                         rel="stylesheet"/>
+                    <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet"/>
                 </Head>
                 <body>
                 <Main/>

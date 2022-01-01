@@ -7,8 +7,11 @@
   margin-right: 75px;
   margin-top: 22px;
   background: $bgColor;
+  @media screen and (max-width: 1090px) {
+   display: block;
+  }
 
-  .frameBlock {
+  &_frameBlock {
     display: flex;
     align-items: center;
 
@@ -34,11 +37,11 @@
 
   }
 
-  .navbar {
+  &_navbar {
     padding: 15px;
   }
 
-  .buttonBlock {
+  &_buttonBlock {
     display: flex;
     align-items: center;
 

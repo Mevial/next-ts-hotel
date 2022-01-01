@@ -1,1 +1,141 @@
 @import "./styles/variables";
+@import "./styles/mixins";
+
+.container {
+
+  .mainBlock {
+    &_welcomeBlock {
+      @include mainText($textFontFamily, 500, 18px, 22px);
+      color: $welcomeTextColor;
+      margin-left: 75px;
+      margin-top: 136px;
+    }
+
+    &_titleBlock {
+      @include mainText($textFontFamily, 600, 64px, 68px);
+      color: $textColor;
+      margin-top: 20px;
+      width: 477px;
+      margin-left: 75px;
+    }
+
+    &_textBlock {
+      @include mainText($secondTextFontFamily, 400, 17px, 22px);
+      color: $primaryColor;
+      margin-top: 56px;
+      margin-left: 81px;
+      width: 402px;
+    }
+
+    .quickBookingBlock {
+      display: flex;
+      margin-top: 56px;
+
+
+      .selectInfoBlock {
+        width: 929px;
+        height: 134px;
+        margin-left: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: $bgColor;
+        box-shadow: 0 16px 46px rgba(0, 0, 0, 0.06);
+        border-radius: 0 20px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          border: 1px solid #CACACA;
+          width: 72px;
+          bottom: 23%;
+          left: 29%;
+          transform: rotate(90deg) translate(-50%, 50%);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          border: 1px solid #CACACA;
+          width: 72px;
+          bottom: 23%;
+          left: 64%;
+          transform: rotate(90deg) translate(-50%, 50%);
+        }
+
+        &_checkinBlock {
+          color: $primaryColor;
+          align-items: center;
+          justify-content: space-evenly;
+          display: flex;
+          width: 136px;
+          height: 60px;
+          flex-wrap: wrap;
+        }
+
+
+        &_checkoutBlock {
+          position: relative;
+          color: $primaryColor;
+          align-items: center;
+          justify-content: space-evenly;
+          display: flex;
+          width: 136px;
+          height: 60px;
+          flex-wrap: wrap;
+
+          //&::before {
+          //  content: "";
+          //  position: absolute;
+          //  background: $primaryColor;
+          //  width: 55px;
+          //  bottom: -1%;
+          //  height: 1px;
+          //  left: -86%;
+          //  transform: rotate(90deg) translate(-50%, 50%);
+          //}
+        }
+
+        &_guestBlock {
+          position: relative;
+          color: $primaryColor;
+          align-items: center;
+          justify-content: space-evenly;
+          display: flex;
+          width: 136px;
+          height: 60px;
+          flex-wrap: wrap;
+
+          //&::before {
+          //  content: "";
+          //  position: absolute;
+          //  background: $primaryColor;
+          //  width: 55px;
+          //  height: 1px;
+          //  bottom: -1%;
+          //  left: -79%;
+          //  transform: rotate(90deg) translate(-50%, 50%);
+          //}
+        }
+      }
+
+      &_checkAvailabilityBlock {
+        color: $bgColor;
+        font-family: $textFontFamily;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        background-color: $bgSecondColor;
+        width: 269px;
+        height: 134px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 20px 0 0;
+      }
+    }
+  }
+}
+

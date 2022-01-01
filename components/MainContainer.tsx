@@ -17,7 +17,7 @@ const MainContainer: React.FC<MainContainerType> = ({children}) => {
     return (
         <>
             <div className={styles.header}>
-                <div className={styles.frameBlock}>
+                <div className={styles.header_frameBlock}>
                     <div className={styles.logo}><Image src={frame} alt="Logo picture"/></div>
                     <div className={styles.option}>
                         <select>
@@ -25,7 +25,7 @@ const MainContainer: React.FC<MainContainerType> = ({children}) => {
                             <option>RU</option>
                         </select></div>
                 </div>
-                <div className={styles.navbar}>
+                <div className={styles.header_navbar}>
                     <Index href={'/'} text="Home"/>
                     <Index href={'/users'} text="Users"/>
                     <Index href={'/room'} text="Room"/>
@@ -34,7 +34,7 @@ const MainContainer: React.FC<MainContainerType> = ({children}) => {
                     <Index href={'/gallery'} text="Gallery"/>
 
                 </div>
-                <div className={styles.buttonBlock}>
+                <div className={styles.header_buttonBlock}>
                     <div className={styles.cart}>
                         <Image src={cart} alt="Cart picture"/>
                     </div>

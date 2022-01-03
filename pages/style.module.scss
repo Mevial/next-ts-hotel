@@ -4,6 +4,8 @@
 .container {
 
   .mainBlock {
+    position: relative;
+    //$this: &;
     &_welcomeBlock {
       @include mainText($textFontFamily, 500, 18px, 22px);
       color: $welcomeTextColor;
@@ -26,14 +28,23 @@
       margin-left: 81px;
       width: 402px;
     }
-
+    .backgroundMainImage{
+      background-image: url("../public/images/mainImage.svg");
+      position: absolute;
+      top: -130px;
+      right: 75px;
+      z-index: -1;
+      width: 630px;
+      height: 763px;
+    }
+    //#{$this} {
     .quickBookingBlock {
       display: flex;
       margin-top: 56px;
 
 
       .selectInfoBlock {
-        width: 929px;
+        width: 660px;
         height: 134px;
         margin-left: 75px;
         display: flex;
@@ -47,7 +58,7 @@
         &::before {
           content: "";
           position: absolute;
-          border: 1px solid #CACACA;
+          border: 1px solid $pseudoElementColor;
           width: 72px;
           bottom: 23%;
           left: 29%;
@@ -57,7 +68,7 @@
         &::after {
           content: "";
           position: absolute;
-          border: 1px solid #CACACA;
+          border: 1px solid $pseudoElementColor;
           width: 72px;
           bottom: 23%;
           left: 64%;
@@ -137,5 +148,11 @@
       }
     }
   }
+  .secondPage{
+    width: 1440px;
+    height: 875px;
+    background: $bgSecondPageColor;
+    position: relative;
+    z-index: -2;
+  }
 }
-

@@ -23,6 +23,7 @@ const Home: NextPage = () => {
                         take in
                         the incredible views and enjoy fresh air from our beautiful sea city.
                     </div>
+                    <div className={styles.backgroundMainImage}></div>
                     <div className={styles.quickBookingBlock}>
                         <div className={styles.selectInfoBlock}>
                             <div className={styles.selectInfoBlock_checkinBlock}>
@@ -59,7 +60,7 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className={styles.secondPage}></div>
             </div>
 
         </MainContainer>

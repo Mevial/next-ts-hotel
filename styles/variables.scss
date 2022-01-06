@@ -3,7 +3,20 @@ $primaryColor: #808080;
 $bgColor: #FFFFFF;
 $bgSecondColor: #063C43;
 $textFontFamily: 'Barlow', sans-serif;
-$secondTextFontFamily:  'Product Sans', sans-serif;
-$welcomeTextColor:#0F97AA;
-$pseudoElementColor:#CACACA;
+$secondTextFontFamily: 'Product Sans', sans-serif;
+$welcomeTextColor: #0F97AA;
+$pseudoElementColor: #CACACA;
 $bgSecondPageColor: #F9F9F9;
+
+//Container & breakpoints;
+@use "sass:math";
+//$containerWidth: 1070;
+//$containerPadding: 40;
+//$containerSidePadding: math.div($containerPadding,2);
+$breakpoint1440: 1439.98+px;
+$breakpoint1200: 1199.98+px;
+$breakpoint992: 991.98+px;
+$breakpoint768: 767.98+px;
+$breakpoint639: 639.98+px;
+$breakpoint480: 479.98+px;
+

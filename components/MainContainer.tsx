@@ -15,7 +15,7 @@ type MainContainerType = {
 const MainContainer: React.FC<MainContainerType> = ({children}) => {
 
     return (
-        <>
+        <div className="container">
             <div className={styles.header}>
                 <div className={styles.header_frameBlock}>
                     <div className={styles.logo}><Image src={frame} alt="Logo picture"/></div>
@@ -25,7 +25,7 @@ const MainContainer: React.FC<MainContainerType> = ({children}) => {
                             <option>RU</option>
                         </select></div>
                 </div>
-                <div className={styles.header_navbar}>
+                <div className={styles.header__navbar}>
                     <Index href={'/'} text="Home"/>
                     <Index href={'/users'} text="Users"/>
                     <Index href={'/room'} text="Room"/>
@@ -34,7 +34,7 @@ const MainContainer: React.FC<MainContainerType> = ({children}) => {
                     <Index href={'/gallery'} text="Gallery"/>
 
                 </div>
-                <div className={styles.header_buttonBlock}>
+                <div className={styles.header__buttonBlock}>
                     <div className={styles.cart}>
                         <Image src={cart} alt="Cart picture"/>
                     </div>
@@ -48,7 +48,7 @@ const MainContainer: React.FC<MainContainerType> = ({children}) => {
             <footer className={styles.footer}>
                 ©2021 All rights reserved.
             </footer>
-        </>
+        </div>
     );
 };
 

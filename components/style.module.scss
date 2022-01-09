@@ -1,66 +1,64 @@
+@use '../styles/mq';
 @import "./styles/variables";
 
 .header {
   display: block;
   margin-top: 22px;
   background: $bgColor;
-  @media screen and (min-width: 1090px) {
+  @include mq.mq(lg) {
     display: flex;
     justify-content: space-between;
   }
 
-  &_frameBlock {
+  &__frame {
     display: flex;
     align-items: center;
+  }
 
-    .logo {
-      position: relative;
-      margin-right: 52px;
+  &__logo {
+    position: relative;
+    margin-right: 52px;
 
-      &::before {
-        content: "";
-        position: absolute;
-        background: $primaryColor;
-        width: 55px;
-        height: 1px;
-        bottom: -10px;
-        left: 90%;
-        transform: rotate(90deg) translate(-50%, 50%);
-      }
+    &::before {
+      content: "";
+      position: absolute;
+      background: $primaryColor;
+      width: 55px;
+      height: 1px;
+      bottom: -10px;
+      left: 90%;
+      transform: rotate(90deg) translate(-50%, 50%);
+    }
 
   }
-  //.option {
-  //
-  //}
-}
 
-&__navbar {
-  padding: 15px 0;
-  display: flex;
-  justify-content: space-between;
-  max-width: 540px;
-  width: 100%;
-}
+  &__navbar {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: 540px;
+    width: 100%;
+  }
 
-&__buttonBlock {
-  display: flex;
-  align-items: center;
+  &__button {
+    display: flex;
+    align-items: center;
+  }
 
-  .cart {
+  &__cart {
     background: rgba(239, 239, 239, 0.15);
     border: 1px solid #E8E8E8;
     border-radius: 8px;
     padding: 6px 8px;
   }
 
-  .login {
+  &__login {
     display: flex;
     margin-left: 24px;
     background: #F4F4F4;
     border-radius: 8px;
     padding: 12px 8px;
   }
-}
 
 }
 

@@ -1,24 +1,6 @@
+@use '../styles/mq';
 @import "./styles/variables";
 @import "./styles/mixins";
-
-//.container {
-//max-width: ($containerWidth + $containerPadding) + px;
-//  width: 100%;
-//  padding: 0 $containerPadding + px;
-//  @media (max-width: $breakpoint1440) {
-//    max-width: 1100px;
-//  }
-//  @media (max-width: $breakpoint992) {
-//    max-width: 970px;
-//  }
-//  @media (max-width: $breakpoint768) {
-//    max-width: 750px;
-//  }
-//  @media (max-width: $breakpoint480) {
-//    max-width: none;
-//  }
-
-//}
 
 .main {
   position: relative;
@@ -35,7 +17,7 @@
     color: $textColor;
     margin-top: 20px;
     max-width: 477px;
-    @media screen and (max-width: $breakpoint480) {
+    @include mq.mq($until: xs) {
       font-size: 50px
     }
   }
@@ -47,114 +29,113 @@
     max-width: 402px;
   }
 
-  .backgroundMainImage {
+  &__quickBooking {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 56px;
+    @include mq.mq($from: xxs) {
+      flex-wrap: nowrap;
+    }
+
+  }
+
+  &__selectInfo {
+    width: 660px;
+    min-height: 134px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $bgColor;
+    box-shadow: 0 16px 46px rgba(0, 0, 0, 0.06);
+    border-radius: 0 20px;
+    position: relative;
+    padding: 42px;
+    gap: 20px;
+    flex-wrap: wrap;
+    @include mq.mq($from: sm) {
+      gap: 0;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      border: 1px solid $SelectInfoItemColor;
+      width: 72px;
+      bottom: 23%;
+      left: 30%;
+      transform: rotate(90deg) translate(-50%, 50%);
+      @include mq.mq($until: sm) {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      border: 1px solid $SelectInfoItemColor;
+      width: 72px;
+      bottom: 23%;
+      left: 67%;
+      transform: rotate(90deg) translate(-50%, 50%);
+      @include mq.mq($until: sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__selectInfoCheckin {
+    color: $primaryColor;
+    flex-direction: column;
+    display: flex;
+    height: 60px;
+  }
+
+
+  &__selectInfoCheckout {
+    color: $primaryColor;
+    flex-direction: column;
+    display: flex;
+    height: 60px;
+  }
+
+  &__selectInfoGuest {
+    color: $primaryColor;
+    flex-direction: column;
+    display: flex;
+    height: 61px;
+  }
+
+  &__backgroundMainImage {
     position: absolute;
     top: -130px;
     right: 0;
     z-index: -1;
     width: 630px;
     height: 763px;
-
-    @media screen and (max-width: 1178px) {
+    @include mq.mq($until: xl) {
       display: none;
     }
   }
 
-  .quickBooking {
+  &__checkAvailability {
+    color: $bgColor;
+    font-family: $textFontFamily;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    background-color: $bgSecondColor;
+    max-width: 269px;
+    min-height: 134px;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 56px;
-    @media screen and (min-width: 360px) {
-      flex-wrap: nowrap;
-    }
-
-    .selectInfo {
-
-      width: 660px;
-      min-height: 134px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: $bgColor;
-      box-shadow: 0 16px 46px rgba(0, 0, 0, 0.06);
-      border-radius: 0 20px;
-      position: relative;
-      padding: 42px;
-      gap: 20px;
-      flex-wrap: wrap;
-
-      @media screen and (min-width: $breakpoint639) {
-        gap: 0;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-      }
-
-
-      //&::before {
-      //  content: "";
-      //  position: absolute;
-      //  border: 1px solid $pseudoElementColor;
-      //  //border-bottom: 1px solid black;
-      //  width: 72px;
-      //  bottom: 23%;
-      //  left: 30%;
-      //  transform: rotate(90deg) translate(-50%, 50%);
-      //  //@media screen and (max-width: 798px){
-      //  //  left: 26%;
-      //  //}
-      //}
-
-      //&::after {
-      //  content: "";
-      //  position: absolute;
-      //  border: 1px solid $pseudoElementColor;
-      //  width: 72px;
-      //  bottom: 23%;
-      //  left: 67%;
-      //  transform: rotate(90deg) translate(-50%, 50%);
-      //}
-
-      &__checkin {
-        color: $primaryColor;
-        flex-direction: column;
-        display: flex;
-        height: 60px;
-      }
-
-
-      &__checkout {
-        color: $primaryColor;
-        flex-direction: column;
-        display: flex;
-        height: 60px;
-      }
-
-      &__guest {
-        color: $primaryColor;
-        flex-direction: column;
-        display: flex;
-        height: 61px;
-      }
-    }
-
-    &__checkAvailability {
-      color: $bgColor;
-      font-family: $textFontFamily;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 24px;
-      text-align: center;
-      background-color: $bgSecondColor;
-      max-width: 269px;
-      min-height: 134px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 0 20px 0 0;
-      margin: 0 auto;
-      @media screen and (min-width: 360px) {
-        margin: 0;
-      }
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 20px 0 0;
+    margin: 0 auto;
+    @include mq.mq($from: xs) {
+      margin: 0;
     }
   }
 }
@@ -165,7 +146,7 @@
   background: $bgSecondPageColor;
   position: relative;
   z-index: -2;
-  @media screen and (min-width: 1440px) {
+  @include mq.mq($from: xxl) {
     width: 100%;
   }
 }

@@ -1,19 +1,18 @@
-import MainContainer from "../../components/MainContainer";
-import Head from "next/head";
-import React from "react";
+import React from 'react';
 
-const Service = () => {
-    return (
-        <MainContainer>
-            <Head>
-                <title>Service</title>
-            </Head>
-            <h1>
-                Service
-            </h1>
-        </MainContainer>
+import Head from 'next/head';
 
-    );
+import MainContainer from '../../components/MainContainer';
+
+const Service = (): any => {
+  return (
+    <MainContainer>
+      <Head>
+        <title>Service</title>
+      </Head>
+      <h1>Service</h1>
+    </MainContainer>
+  );
 };
 
 export default Service;

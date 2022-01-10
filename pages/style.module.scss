@@ -1,1 +1,153 @@
+@use '../styles/mq';
 @import "./styles/variables";
+@import "./styles/mixins";
+
+.main {
+  position: relative;
+
+  &__welcome {
+    @include mainText($textFontFamily, 500, 18px, 22px);
+    color: $welcomeTextColor;
+    margin-top: 136px;
+
+  }
+
+  &__title {
+    @include mainText($textFontFamily, 600, 64px, 68px);
+    color: $textColor;
+    margin-top: 20px;
+    max-width: 477px;
+    @include mq.mq($until: xs) {
+      font-size: 50px
+    }
+  }
+
+  &__text {
+    @include mainText($secondTextFontFamily, 400, 17px, 22px);
+    color: $primaryColor;
+    margin-top: 56px;
+    max-width: 402px;
+  }
+
+  &__quickBooking {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 56px;
+    @include mq.mq($from: xxs) {
+      flex-wrap: nowrap;
+    }
+
+  }
+
+  &__selectInfo {
+    width: 660px;
+    min-height: 134px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $bgColor;
+    box-shadow: 0 16px 46px rgba(0, 0, 0, 0.06);
+    border-radius: 0 20px;
+    position: relative;
+    padding: 42px;
+    gap: 20px;
+    flex-wrap: wrap;
+    @include mq.mq($from: sm) {
+      gap: 0;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      border: 1px solid $SelectInfoItemColor;
+      width: 72px;
+      bottom: 23%;
+      left: 30%;
+      transform: rotate(90deg) translate(-50%, 50%);
+      @include mq.mq($until: sm) {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      border: 1px solid $SelectInfoItemColor;
+      width: 72px;
+      bottom: 23%;
+      left: 67%;
+      transform: rotate(90deg) translate(-50%, 50%);
+      @include mq.mq($until: sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__selectInfoCheckin {
+    color: $primaryColor;
+    flex-direction: column;
+    display: flex;
+    height: 60px;
+  }
+
+
+  &__selectInfoCheckout {
+    color: $primaryColor;
+    flex-direction: column;
+    display: flex;
+    height: 60px;
+  }
+
+  &__selectInfoGuest {
+    color: $primaryColor;
+    flex-direction: column;
+    display: flex;
+    height: 61px;
+  }
+
+  &__backgroundMainImage {
+    position: absolute;
+    top: -130px;
+    right: 0;
+    z-index: -1;
+    width: 630px;
+    height: 763px;
+    @include mq.mq($until: xl) {
+      display: none;
+    }
+  }
+
+  &__checkAvailability {
+    color: $bgColor;
+    font-family: $textFontFamily;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    background-color: $bgSecondColor;
+    max-width: 269px;
+    min-height: 134px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 20px 0 0;
+    margin: 0 auto;
+    @include mq.mq($from: xs) {
+      margin: 0;
+    }
+  }
+}
+
+.secondPage {
+  max-width: none;
+  max-height: none;
+  background: $bgSecondPageColor;
+  position: relative;
+  z-index: -2;
+  @include mq.mq($from: xxl) {
+    width: 100%;
+  }
+}
+

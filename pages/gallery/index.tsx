@@ -1,19 +1,18 @@
-import MainContainer from "../../components/MainContainer";
-import Head from "next/head";
-import React from "react";
+import React from 'react';
 
-const Gallery = () => {
-    return (
-        <MainContainer>
-            <Head>
-                <title>Gallery</title>
-            </Head>
-            <h1>
-                Gallery
-            </h1>
-        </MainContainer>
+import Head from 'next/head';
 
-    );
+import MainContainer from '../../components/MainContainer';
+
+const Gallery = (): any => {
+  return (
+    <MainContainer>
+      <Head>
+        <title>Gallery</title>
+      </Head>
+      <h1>Gallery</h1>
+    </MainContainer>
+  );
 };
 
 export default Gallery;

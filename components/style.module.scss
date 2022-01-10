@@ -1,66 +1,69 @@
+@use '../styles/mq';
 @import "./styles/variables";
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 75px;
-  margin-right: 75px;
+  display: block;
   margin-top: 22px;
   background: $bgColor;
+  @include mq.mq(lg) {
+    display: flex;
+    justify-content: space-between;
+  }
 
-  .frameBlock {
+  &__frame {
     display: flex;
     align-items: center;
+  }
 
-    .logo {
-      position: relative;
-      margin-right: 52px;
+  &__logo {
+    position: relative;
+    margin-right: 52px;
 
-      &::before {
-        content: "";
-        position: absolute;
-        background: $primaryColor;
-        width: 55px;
-        height: 1px;
-        bottom: -10px;
-        left: 90%;
-        transform: rotate(90deg) translate(-50%, 50%);
-      }
-    }
-
-    .option {
-
+    &::before {
+      content: "";
+      position: absolute;
+      background: $primaryColor;
+      width: 55px;
+      height: 1px;
+      bottom: -10px;
+      left: 90%;
+      transform: rotate(90deg) translate(-50%, 50%);
     }
 
   }
 
-  .navbar {
-    padding: 15px;
+  &__navbar {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: 540px;
+    width: 100%;
   }
 
-  .buttonBlock {
+  &__button {
     display: flex;
     align-items: center;
+  }
 
-    .cart {
-      background: rgba(239, 239, 239, 0.15);
-      border: 1px solid #E8E8E8;
-      border-radius: 8px;
-      padding: 6px 8px;
-    }
+  &__cart {
+    background: rgba(239, 239, 239, 0.15);
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    padding: 6px 8px;
+  }
 
-    .login {
-      display: flex;
-      margin-left: 24px;
-      background: #F4F4F4;
-      border-radius: 8px;
-      padding: 12px 8px;
-    }
+  &__login {
+    display: flex;
+    margin-left: 24px;
+    background: #F4F4F4;
+    border-radius: 8px;
+    padding: 12px 8px;
   }
 
 }
 
 .footer {
+  margin-top: 200px;
   display: flex;
   flex: 1;
   padding: 2rem 0;

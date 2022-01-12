@@ -26,7 +26,6 @@
     "no-alert": "error",
     "no-debugger": "error",
     "no-plusplus": "error",
-    "no-unused-vars": "off",
     "no-magic-numbers": "off",
     "default-param-last": "off",
     "no-use-before-define": "off",
@@ -58,7 +57,12 @@
         "allowExpressions": true
       }
     ],
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react/prop-types": 0,
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
 import MainContainer from '../components/MainContainer';
+import { hotelAPI } from '../dal/hotelAPI';
 import calendar from '../public/images/calendar.svg';
 import groupDate from '../public/images/groupDate.svg';
 import mainImage from '../public/images/mainImage.svg';
@@ -13,6 +14,11 @@ import users from '../public/images/users.svg';
 import styles from './style.module.scss';
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    hotelAPI.getAllRooms().then(res => {
+      console.log(res.data);
+    });
+  }, []);
   return (
     <MainContainer>
       <Head>

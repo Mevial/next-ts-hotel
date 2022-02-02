@@ -2,10 +2,12 @@ import express from 'express';
 import dotenv from 'dotenv';
 import router from './routes';
 import cors from 'cors';
+
+const sequelize = require('./../util/db');
+
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
-
 const allowedOrigins = ['http://localhost:8000', 'http://localhost:3000'];
 
 const options: cors.CorsOptions = {
@@ -29,4 +31,14 @@ app.get('/error', async (req, res) => {
     res.status(400).send('Something bad happened');
   }
 });
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+const start = async () => {
+  try {
+    await sequelize.authenticate();
+    await sequelize.sync();
+    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+  } catch (e) {
+    console.log(e);
+  }
+};
+start();

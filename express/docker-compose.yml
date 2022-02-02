@@ -3,56 +3,38 @@ version: '3.8'
 services:
   node_backend:
     container_name: express
-    image: express:0.0.3
+    image: express:0.0.4
     build:
       context: .
     ports:
-      - "8000:8000"
+      - "8001:8000"
     environment:
-      - PORT=8000
-      - PGDATABASE=express_db
-      - PGUSER=maxim
-      - PGPASSWORD=12345
-      - PGHOST=node_db
+      DB_HOST: node_db
+      DB_PASSWORD: 123
+      restart: always
     depends_on:
       - node_db
-    networks:
-      new:
-        aliases:
-          - database
   node_db:
     container_name: node_db
     image: postgres
     ports:
-      - "5432:5432"
+      - "5444:5432"
     environment:
-      - POSTGRES_USER=maxim
-      - POSTGRES_PASSWORD=12345
-      - POSTGRESS_DB=express_db
-    volumes:
-      - nps_data:/var/lib/postgresql/data
-    networks:
-      new:
-        aliases:
-          - database
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: express
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+
 
   node_pgadmin:
     container_name: node_pgadmin
     image: dpage/pgadmin4
-    env_file:
-      - .env
-    restart: 'no'
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
-      - "5051:5051"
-    depends_on:
-      - node_db
-    networks:
-      new:
-        aliases:
-          - database
+      - "5051:80"
+
 
 networks:
   new:

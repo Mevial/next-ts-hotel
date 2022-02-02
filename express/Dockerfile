@@ -7,11 +7,10 @@ WORKDIR /src
 RUN npm install i npm@latest -g
 
 COPY package.json package-lock*.json ./
+COPY . .
 
 RUN npm install
 
 RUN chmod +x wait-for-postgres.sh
-
-COPY . .
 
 CMD ["node", "build/src/index.js"]
